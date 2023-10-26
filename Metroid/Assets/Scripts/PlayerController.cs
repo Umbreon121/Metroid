@@ -12,16 +12,50 @@ public class PlayerController : MonoBehaviour
     //This will determine how many lives the player has
     public int lives = 3;
 
+    public int speed;
+    // Controls how high the player can Jump
+    public float jumpForce = 10f;
+
+    private Rigidbody rigidbody;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Set a refrecene to the player's attached rigied body
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.A)) 
+        {
+            // traslate the players speed by speed using time.deltatime
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+
+        HandelJumping();
+    }
+
+    private void HandelJumping()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RaycastHit hit;
+
+            // If  the rayacast returns true then an object has been hit and the player is toching the floor
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f))
+            {
+
+                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
+        }
+
     }
 }
