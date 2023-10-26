@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+
 
 //Edwards, Eric, Project Manager
 //Vila, Mondo
@@ -9,14 +11,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //This will determine how many lives the player has
-    public int lives = 3;
+    //This will determine how much Hp the player has
+    public int Hp = 99;
 
     public int speed;
     // Controls how high the player can Jump
     public float jumpForce = 10f;
 
     private Rigidbody rigidbody;
+
+    private bool goingRight = true;
 
 
     // Start is called before the first frame update
@@ -29,15 +33,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.A)) 
+        if (Input.GetKey(KeyCode.D)) 
         {
+            if (!goingRight) 
+            {
+                transform.Rotate(Vector3.up * 180); 
+             goingRight = true;
+            }
+
             // traslate the players speed by speed using time.deltatime
-            transform.position += Vector3.left * speed * Time.deltaTime;
+            transform.position += Vector3.right * speed * Time.deltaTime;
+           
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            if (goingRight)
+            {
+                transform.Rotate(Vector3.up * 180);
+                goingRight = false;
+            }
+            transform.position += Vector3.left * speed * Time.deltaTime;
         }
 
         HandelJumping();
@@ -58,4 +74,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+
 }

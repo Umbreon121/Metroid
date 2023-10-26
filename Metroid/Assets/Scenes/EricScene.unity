@@ -313,12 +313,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406809859}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9999891, z: -0, w: -0.00467292}
-  m_LocalPosition: {x: -0.73, y: 0.029999971, z: 7.94}
+  m_LocalRotation: {x: -0, y: -0.00467292, z: -0, w: 0.9999891}
+  m_LocalPosition: {x: 0.73, y: 1, z: -7.9700003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2136881192}
+  m_Father: {fileID: 1625398719}
   m_LocalEulerAnglesHint: {x: 0, y: -180.535, z: 0}
 --- !u!1 &996177711
 GameObject:
@@ -549,6 +549,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 406809862}
   - {fileID: 2136881192}
   - {fileID: 996177712}
   m_Father: {fileID: 0}
@@ -566,7 +567,6 @@ GameObject:
   - component: {fileID: 2136881194}
   - component: {fileID: 2136881193}
   - component: {fileID: 2136881196}
-  - component: {fileID: 2136881197}
   - component: {fileID: 2136881198}
   m_Layer: 0
   m_Name: Samus
@@ -583,16 +583,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136881191}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.999959, z: -0, w: -0.009055188}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0.97, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 296599272}
   - {fileID: 2137719708}
-  - {fileID: 406809862}
   m_Father: {fileID: 1625398719}
-  m_LocalEulerAnglesHint: {x: 0, y: 181.038, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!136 &2136881193
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -693,18 +692,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &2136881197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136881191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad895b1d7b44860448d32f61dcf4dc4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2136881198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,7 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91714af11a45e1e4a84113e2f01c4b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  Hp: 99
   speed: 5
   jumpForce: 5
 --- !u!1 &2137719707
