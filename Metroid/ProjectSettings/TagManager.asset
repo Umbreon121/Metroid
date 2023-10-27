@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - left
   - right
   - Sledgehammer
+  - Sentry
   layers:
   - Default
   - TransparentFX

@@ -5,9 +5,9 @@ using UnityEngine;
 //Vila, Mondo
 //Edwards, Eric
 //10/24/23
-//Script for Regular Enemy
+//Script for Regular Enemy: Sentry
 
-public class EnemyMove : MonoBehaviour
+public class Sentry : MonoBehaviour
 {
     public GameObject leftPoint;
     public GameObject rightPoint;
