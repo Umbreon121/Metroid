@@ -13,11 +13,11 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public PlayerController playerController;
-    public TMP_Text energyText;
+    public TMP_Text livesText;
 
     // Update is called once per frame
     void Update()
     {
-        energyText.text = "Energy: " + playerController.energy;
+        //livesText.text = "Lives: " + playerController.lives;
     }
 }
