@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b8de97416ca26c640b38774b83a944ae, type: 2}
+  - {fileID: 2100000, guid: a24d363403c24ac4ea242b28c09cc803, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,7 +167,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1ffbbae513ab5c47bc8f3f15937238f, type: 2}
+  - {fileID: 2100000, guid: 5c880d669df6c4240987882015533dab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -276,7 +276,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b81fd139fd70ac4e9292a070d3e9396, type: 2}
+  - {fileID: 2100000, guid: 2f4f2bbfdd94b2749bd83f58df9a4173, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -363,3 +363,4 @@ MonoBehaviour:
   Hp: 99
   speed: 5
   jumpForce: 5
+  goingRight: 1
