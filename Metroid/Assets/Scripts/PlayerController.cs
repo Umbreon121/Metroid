@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 
 //Edwards, Eric, Project Manager
@@ -20,8 +21,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbody;
 
-    private bool goingRight = true;
-
+    public bool goingRight = true;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
         }
 
         HandelJumping();
+
+
     }
 
     private void HandelJumping()

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 //Vila, Mondo
 //Edwards, Eric
 //10/24/23
-//Script for Regular Enemy
+//Script for Regular Enemy: Sentry
 
-public class EnemyMove : MonoBehaviour
+public class Sentry : MonoBehaviour
 {
     public GameObject leftPoint;
     public GameObject rightPoint;
@@ -15,6 +16,7 @@ public class EnemyMove : MonoBehaviour
     private Vector3 rightPos;
     public int speed;
     public bool goingLeft;
+    public int Hp;
 
     // Start is called before the first frame update
     void Start()
@@ -54,5 +56,19 @@ public class EnemyMove : MonoBehaviour
                 transform.position += Vector3.right * Time.deltaTime * speed;
             }
         }
+    }
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(other.gameObject.tag == "Beam")
+        {
+            Hp--;
+            other.gameObject.SetActive(false);
+            if(Hp <= 0) 
+            { 
+            this.gameObject.SetActive(false);
+            }
+
+        }
+    
     }
 }
