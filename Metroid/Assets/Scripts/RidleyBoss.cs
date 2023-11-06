@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
+//Vila, Mondo
+//Edwards, Eric
+//11/5/23
+//Ridley Boss script for flying and following player
 
 public class RidleyBoss : MonoBehaviour
 {
-    public float MinDistance = 2;
+    public float MinDistance = 1;
     public float MaxDistance = 5;
     public float Speed = 6;
     public Transform Player;
@@ -17,6 +22,10 @@ public class RidleyBoss : MonoBehaviour
     public bool goingUp = true;
     public bool waiting = false;
 
+    public float waitTimeAtTop = 2;
+    public float waitTimeAtBottom = 2f;
+
+
     void Update()
     {
         transform.LookAt(Player);
@@ -26,8 +35,10 @@ public class RidleyBoss : MonoBehaviour
 
             follow.y = this.transform.position.y;
 
-            // remenber to use the new 'follow' position, not the Player.transform.position or else it'll move directly to the player
             this.transform.position = Vector3.MoveTowards(this.transform.position, follow, Speed * Time.deltaTime);
+
+            Vector3 playerPosition = new Vector3(Player.position.x, Player.position.y, Player.position.z);
+            this.transform.LookAt(playerPosition);
         }
 
         Fly();
@@ -41,6 +52,8 @@ public class RidleyBoss : MonoBehaviour
             if (transform.position.y >= topY)
             {
                 goingUp = false;
+                //Start wait routine
+                StartCoroutine(Wait(waitTimeAtTop));
             }
             else
             {
@@ -54,6 +67,9 @@ public class RidleyBoss : MonoBehaviour
             if (transform.position.y <= bottomY)
             {
                 goingUp = true;
+                //Start wait routine
+                StartCoroutine(Wait(waitTimeAtBottom));
+
             }
             else
             {
@@ -61,5 +77,19 @@ public class RidleyBoss : MonoBehaviour
                 transform.position += Vector3.down * fallingSpeed * Time.deltaTime;
             }
         }
+    }
+
+    /// <summary>
+    /// a coroutine used to wait a specific amount of time before moving again
+    /// </summary>
+    /// <param name="waitTime"></param>
+    /// <returns></returns>
+    IEnumerator Wait(float waitTime)
+    {
+        waiting = true;
+        //Start the timer, doesn't do any code after this time until the timer is up
+        yield return new WaitForSeconds(waitTime);
+        //After time has passed, the next lines occur
+
     }
 }

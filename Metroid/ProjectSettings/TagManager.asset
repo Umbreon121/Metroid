@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Beam
+  - Sledgehammer
+  - left
+  - Sentry
+  - right
+  - Ridley
   layers:
   - Default
   - TransparentFX
