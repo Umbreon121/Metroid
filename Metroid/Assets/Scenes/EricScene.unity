@@ -123,36 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &201114861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8428451021045643919, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
-  m_PrefabInstance: {fileID: 667912481}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &201114867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6685197341914492988, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
   m_PrefabInstance: {fileID: 667912481}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &317990534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5005938778387594284, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
-  m_PrefabInstance: {fileID: 667912481}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &317990539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317990534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1f9cbac7539874eb43ee500ae77d4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beamPrefab: {fileID: 1763039812164544811, guid: 1c7e8882f58b39447b54a8215b5dda2b, type: 3}
-  reloading: 0
-  player: {fileID: 201114861}
 --- !u!1 &406809859
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +242,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5612623013606093031, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
+      propertyPath: Swhite
+      value: 
+      objectReference: {fileID: 2100000, guid: 258149e683823064d8f6651e3d266716, type: 2}
+    - target: {fileID: 5612623013606093031, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
+      propertyPath: SOrange
+      value: 
+      objectReference: {fileID: 2100000, guid: 2f4f2bbfdd94b2749bd83f58df9a4173, type: 2}
     - target: {fileID: 6685197341914492988, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -314,10 +297,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5005938778387594284, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 317990539}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4037f1867e8ce24693eabc555f49b0a, type: 3}
 --- !u!1 &742133275
 GameObject:
@@ -817,6 +797,10 @@ PrefabInstance:
     - target: {fileID: 8694270344433259116, guid: 2aff3e49f904d1d4fab85bf3ed016dec, type: 3}
       propertyPath: m_Name
       value: Metroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 8694270344433259116, guid: 2aff3e49f904d1d4fab85bf3ed016dec, type: 3}
+      propertyPath: m_TagString
+      value: Sentry
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

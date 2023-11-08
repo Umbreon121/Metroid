@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5299232458745194137}
   - component: {fileID: 917334683914829440}
   - component: {fileID: 8848361483942878925}
+  - component: {fileID: 4938499861104003709}
   m_Layer: 0
   m_Name: Blaster
   m_TagString: Untagged
@@ -210,6 +211,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4938499861104003709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005938778387594284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1f9cbac7539874eb43ee500ae77d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beamPrefab: {fileID: 1763039812164544811, guid: 1c7e8882f58b39447b54a8215b5dda2b, type: 3}
+  reloading: 0
+  player: {fileID: 8428451021045643919}
 --- !u!1 &8428451021045643919
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,3 +380,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 5
   goingRight: 1
+  Swhite: {fileID: 2100000, guid: 258149e683823064d8f6651e3d266716, type: 2}
+  SOrange: {fileID: 2100000, guid: 2f4f2bbfdd94b2749bd83f58df9a4173, type: 2}
+  Invceable: 0
+  Ifram: 2

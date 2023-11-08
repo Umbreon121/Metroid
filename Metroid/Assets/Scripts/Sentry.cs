@@ -16,7 +16,7 @@ public class Sentry : MonoBehaviour
     private Vector3 rightPos;
     public int speed;
     public bool goingLeft;
-    public int Hp;
+    public int Hp = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -71,4 +71,5 @@ public class Sentry : MonoBehaviour
         }
     
     }
+
 }

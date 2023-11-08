@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 //Vila, Mondo
@@ -10,6 +11,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class RidleyBoss : MonoBehaviour
 {
+    public int Hp = 10;
     public float MinDistance = 1;
     public float MaxDistance = 5;
     public float Speed = 6;
@@ -90,6 +92,19 @@ public class RidleyBoss : MonoBehaviour
         //Start the timer, doesn't do any code after this time until the timer is up
         yield return new WaitForSeconds(waitTime);
         //After time has passed, the next lines occur
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Beam")
+        {
+            Hp -= 1;
+            if (Hp <= 0)
+            {
+              this.gameObject.SetActive(false);
+
+            }
+        }
 
     }
 }

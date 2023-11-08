@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-
 
 //Edwards, Eric, Project Manager
 //Vila, Mondo
@@ -23,27 +20,42 @@ public class PlayerController : MonoBehaviour
 
     public bool goingRight = true;
 
+    public Material Swhite;
+
+    public Material SOrange;
+
+    public bool Invceable = false;
+
+    public float Ifram = 2f;
+
+    public bool JumpCrate = false;
+
+    public bool HevayBlaster = false;
+
+    public bool HPMax = false;
+
     // Start is called before the first frame update
     void Start()
     {
         // Set a refrecene to the player's attached rigied body
         rigidbody = GetComponent<Rigidbody>();
+        GetComponent<MeshRenderer>().material = SOrange;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D)) 
+        if (Input.GetKey(KeyCode.D))
         {
-            if (!goingRight) 
+            if (!goingRight)
             {
-                transform.Rotate(Vector3.up * 180); 
-             goingRight = true;
+                transform.Rotate(Vector3.up * 180);
+                goingRight = true;
             }
 
             // traslate the players speed by speed using time.deltatime
             transform.position += Vector3.right * speed * Time.deltaTime;
-           
+
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -57,7 +69,6 @@ public class PlayerController : MonoBehaviour
         }
 
         HandelJumping();
-
 
     }
 
@@ -77,5 +88,42 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Sentry" && Invceable == false)
+        {
+            Hp -= 15;
+            Invceable = true;
+            StartCoroutine(Iframe());
 
+            if (Hp <= 0)
+            {
+                SceneManager.LoadScene(2);
+
+            }
+            if (other.gameObject.tag == "Ridley" && Invceable == false) 
+            {
+                Hp -= 35;
+                Invceable = true;
+                StartCoroutine(Iframe());
+
+                if (Hp <= 0)
+                {
+                    SceneManager.LoadScene(2);
+
+                }
+
+            }
+        }
+
+
+    }
+    IEnumerator Iframe()
+    {
+        GetComponent<MeshRenderer>().material = Swhite;
+        yield return new WaitForSeconds(Ifram);
+        Invceable = false;
+        GetComponent<MeshRenderer>().material = SOrange;
+
+    }
 }
