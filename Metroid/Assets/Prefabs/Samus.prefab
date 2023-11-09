@@ -226,6 +226,8 @@ MonoBehaviour:
   beamPrefab: {fileID: 1763039812164544811, guid: 1c7e8882f58b39447b54a8215b5dda2b, type: 3}
   reloading: 0
   player: {fileID: 8428451021045643919}
+  HevayBlaster: 0
+  Blasters: 1
 --- !u!1 &8428451021045643919
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,3 +386,5 @@ MonoBehaviour:
   SOrange: {fileID: 2100000, guid: 2f4f2bbfdd94b2749bd83f58df9a4173, type: 2}
   Invceable: 0
   Ifram: 2
+  JumpCrate: 0
+  HPMax: 0

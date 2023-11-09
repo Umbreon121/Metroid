@@ -30,9 +30,9 @@ public class PlayerController : MonoBehaviour
 
     public bool JumpCrate = false;
 
-    public bool HevayBlaster = false;
-
     public bool HPMax = false;
+
+    public int Heal = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +83,12 @@ public class PlayerController : MonoBehaviour
             {
 
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+                if (JumpCrate == true)
+                {
+                    GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce * 2, ForceMode.Impulse);
+
+                }
             }
         }
 
@@ -95,25 +101,40 @@ public class PlayerController : MonoBehaviour
             Hp -= 15;
             Invceable = true;
             StartCoroutine(Iframe());
+        }
+        if (Hp <= 0)
+        {
+            SceneManager.LoadScene(2);
+
+        }
+        if (other.gameObject.tag == "Ridley" && Invceable == false)
+        {
+            Hp -= 35;
+            Invceable = true;
+            StartCoroutine(Iframe());
 
             if (Hp <= 0)
             {
                 SceneManager.LoadScene(2);
 
             }
-            if (other.gameObject.tag == "Ridley" && Invceable == false) 
-            {
-                Hp -= 35;
-                Invceable = true;
-                StartCoroutine(Iframe());
 
-                if (Hp <= 0)
-                {
-                    SceneManager.LoadScene(2);
-
-                }
-
-            }
+        }
+        if (other.gameObject.tag == "Jump")
+        {
+            JumpCrate = true;
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.tag == "MaxHp")
+        {
+            HPMax = true;
+            Hp = 190;
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.tag == "HealthPack")
+        {
+            Hp += Heal;
+            other.gameObject.SetActive(false);
         }
 
 
