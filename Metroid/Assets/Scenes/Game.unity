@@ -6187,6 +6187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14dfec5d79adfbb4e8da3ba8366f5ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 10
   MinDistance: 2
   MaxDistance: 20
   Speed: 5
@@ -11749,6 +11750,7 @@ GameObject:
   - component: {fileID: 792373768}
   - component: {fileID: 792373767}
   - component: {fileID: 792373771}
+  - component: {fileID: 792373772}
   m_Layer: 0
   m_Name: Portal4
   m_TagString: Untagged
@@ -11854,6 +11856,19 @@ Halo:
     serializedVersion: 2
     rgba: 4278318058
   m_Size: 1
+--- !u!114 &792373772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792373766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e81a98339450d34882046a8090e3d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint1: {fileID: 0}
 --- !u!1001 &810977303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22833,6 +22848,7 @@ GameObject:
   - component: {fileID: 1338752105}
   - component: {fileID: 1338752104}
   - component: {fileID: 1338752109}
+  - component: {fileID: 1338752110}
   m_Layer: 0
   m_Name: Portal2
   m_TagString: Untagged
@@ -22951,6 +22967,19 @@ Halo:
     serializedVersion: 2
     rgba: 4278775539
   m_Size: 1
+--- !u!114 &1338752110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338752103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e81a98339450d34882046a8090e3d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint1: {fileID: 1909721877}
 --- !u!1 &1386269122
 GameObject:
   m_ObjectHideFlags: 0
@@ -28739,6 +28768,7 @@ GameObject:
   - component: {fileID: 1564941049}
   - component: {fileID: 1564941048}
   - component: {fileID: 1564941053}
+  - component: {fileID: 1564941054}
   m_Layer: 0
   m_Name: Portal1
   m_TagString: Untagged
@@ -28857,6 +28887,19 @@ Halo:
     serializedVersion: 2
     rgba: 4278311921
   m_Size: 1
+--- !u!114 &1564941054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564941047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e81a98339450d34882046a8090e3d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint1: {fileID: 830155228}
 --- !u!1 &1618288731
 GameObject:
   m_ObjectHideFlags: 0
@@ -29145,6 +29188,7 @@ GameObject:
   - component: {fileID: 1785736684}
   - component: {fileID: 1785736683}
   - component: {fileID: 1785736688}
+  - component: {fileID: 1785736689}
   m_Layer: 0
   m_Name: Portal3
   m_TagString: Untagged
@@ -29263,6 +29307,19 @@ Halo:
     serializedVersion: 2
     rgba: 4278901498
   m_Size: 1
+--- !u!114 &1785736689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785736682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e81a98339450d34882046a8090e3d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint1: {fileID: 2114044024}
 --- !u!1 &1809404764
 GameObject:
   m_ObjectHideFlags: 0
