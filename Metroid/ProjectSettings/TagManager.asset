@@ -10,6 +10,7 @@ TagManager:
   - Sentry
   - right
   - Ridley
+  - Portal
   layers:
   - Default
   - TransparentFX
