@@ -11,6 +11,10 @@ TagManager:
   - right
   - Ridley
   - Portal
+  - MaxHp
+  - HealthPack
+  - Jump
+  - HeveyBeam
   layers:
   - Default
   - TransparentFX

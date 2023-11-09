@@ -12,6 +12,9 @@ public class Blaster : MonoBehaviour
 
     public GameObject player;
 
+    public bool HevayBlaster = false;
+    public bool Blasters = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,14 +36,19 @@ public class Blaster : MonoBehaviour
     {
         if (player.transform.rotation.y == 0) 
         {
-            
-            GameObject BeamInstance = Instantiate(beamPrefab, transform.position, transform.rotation);
-            BeamInstance.GetComponent<Beam>().goingRight = GameObject.Find("Samus").GetComponent<PlayerController>().goingRight;
+            if (Blasters == true)
+            {
+                GameObject BeamInstance = Instantiate(beamPrefab, transform.position, transform.rotation);
+                BeamInstance.GetComponent<Beam>().goingRight = GameObject.Find("Samus").GetComponent<PlayerController>().goingRight;
+            }
         }
         else 
         {
-            GameObject BeamInstance = Instantiate(beamPrefab, transform.position, transform.rotation);
-            BeamInstance.GetComponent<Beam>().goingRight = GameObject.Find("Samus").GetComponent<PlayerController>().goingRight;
+            if (Blasters == true)
+            {
+                GameObject BeamInstance = Instantiate(beamPrefab, transform.position, transform.rotation);
+                BeamInstance.GetComponent<Beam>().goingRight = GameObject.Find("Samus").GetComponent<PlayerController>().goingRight;
+            }
         }
     }
 
