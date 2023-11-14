@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
 //Vila, Mondo
 //Edwards, Eric
-//10/24/23
+//11/13/23
 //UI to display coins collected and lives
 
 

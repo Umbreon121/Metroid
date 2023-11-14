@@ -5,17 +5,24 @@ using UnityEngine;
 
 //Vila, Mondo
 //Edwards, Eric
-//10/24/23
+//11/13/23
 //Script for Regular Enemy: Sentry
 
 public class Sentry : MonoBehaviour
 {
+    // The farthest  left point the enemy will go to.
     public GameObject leftPoint;
+    // The farthest  right point the enemy will go to.
     public GameObject rightPoint;
+    // The left point the enemy will go to.
     private Vector3 leftPos;
+    // The right point the enemy will go to.
     private Vector3 rightPos;
+    // How fast the enmey moves
     public int speed;
+    /// Is the Enemy going left.
     public bool goingLeft;
+    // Enemy Hp
     public int Hp = 1;
 
     // Start is called before the first frame update
@@ -31,7 +38,9 @@ public class Sentry : MonoBehaviour
     {
         Move();
     }
-
+    /// <summary>
+    /// Will move the ememy left and right.
+    /// </summary>
     private void Move()
     {
         if (goingLeft)
@@ -57,6 +66,10 @@ public class Sentry : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// If a beam hit this enemey deal 1 damage and if hp = 0 turn the enmey off
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other) 
     {
         if(other.gameObject.tag == "Beam")

@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
-
+//Vila, Mondo
+//Edwards, Eric
+//11/13/23
+//Script for the beam
 public class Beam : MonoBehaviour
 {
     // How Fast the Beam will move

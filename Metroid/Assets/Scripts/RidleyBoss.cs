@@ -6,25 +6,35 @@ using static UnityEngine.GraphicsBuffer;
 
 //Vila, Mondo
 //Edwards, Eric
-//11/5/23
+//11/13/23
 //Ridley Boss script for flying and following player
 
 public class RidleyBoss : MonoBehaviour
 {
     public int Hp = 10;
+
     public float MinDistance = 1;
+
     public float MaxDistance = 5;
+
     public float Speed = 6;
+
     public Transform Player;
 
     public float topY;
+
     public float bottomY;
+
     public float risingSpeed;
+
     public float fallingSpeed;
+
     public bool goingUp = true;
+
     public bool waiting = false;
 
     public float waitTimeAtTop = 2;
+
     public float waitTimeAtBottom = 2f;
 
 
