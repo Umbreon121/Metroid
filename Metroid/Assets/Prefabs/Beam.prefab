@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f70f6e3aeb9078418d41ad49bafff26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  Despawn: 5
+  speed: 5
+  Despawn: 2
   goingRight: 0
 --- !u!54 &-8197511269731449930
 Rigidbody:
