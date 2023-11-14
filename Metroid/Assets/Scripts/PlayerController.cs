@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -34,12 +35,17 @@ public class PlayerController : MonoBehaviour
 
     public int Heal = 20;
 
+    // Where the player will respawn after death.
+    private Vector3 startPosition;
+
     // Start is called before the first frame update
     void Start()
     {
         // Set a refrecene to the player's attached rigied body
         rigidbody = GetComponent<Rigidbody>();
         GetComponent<MeshRenderer>().material = SOrange;
+        // Set the start position
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -69,6 +75,7 @@ public class PlayerController : MonoBehaviour
         }
 
         HandelJumping();
+        Danger();
 
     }
 
@@ -136,7 +143,13 @@ public class PlayerController : MonoBehaviour
             Hp += Heal;
             other.gameObject.SetActive(false);
         }
+        if (other.gameObject.tag == "Portal")
+        {
+            startPosition = other.gameObject.GetComponent<Portal1>().spawnPoint.transform.position;
 
+            transform.position = startPosition;
+
+        }
 
     }
     IEnumerator Iframe()
@@ -145,6 +158,21 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(Ifram);
         Invceable = false;
         GetComponent<MeshRenderer>().material = SOrange;
+
+    }
+    private void Danger()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.up, out hit, 1f) && Invceable == false)
+        {
+            if (hit.collider.tag == "Sledgehammer")
+            {
+                Hp -= 15;
+                Invceable = true;
+                StartCoroutine(Iframe());
+            }
+        }
+
 
     }
 }
